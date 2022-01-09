@@ -9,7 +9,7 @@ public class FloatReference
     public float constantValue;
     public FloatVariable variable;
 
-    public float Value {
+    /*public float value {
         get { return useConstant ? constantValue : variable.runtimeValue;}
-    }
+    }*/
 }

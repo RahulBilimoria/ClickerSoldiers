@@ -11,14 +11,14 @@ public class UpdateLabels : MonoBehaviour
     public Text Gold;
 
     public void updateZoneText(){
-        if (monsterCount.Value > 10){
-            monsterCount.Value = 1;
-            zoneArea.Value++;
+        if (monsterCount.value > 10){
+            monsterCount.value = 0;
+            zoneArea.value++;
         }
-        Zone.text = "Zone " + zoneArea.Value + " - " + monsterCount.Value + "/10";
+        Zone.text = "Zone " + zoneArea.value + " - " + monsterCount.value + "/10";
     }
 
     public void updateGoldText(IntegerVariable goldAmount){
-        Gold.text = "Gold: " + goldAmount.Value;
+        Gold.text = "Gold: " + goldAmount.value;
     }
 }

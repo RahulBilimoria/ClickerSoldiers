@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "ScriptableObjects/FloatVariable")]
-public class FloatVariable : ScriptableObject, ISerializationCallbackReceiver
+public class FloatVariable : ScriptableObject
 {
     public float value;
 
-    [System.NonSerialized]
-    public float runtimeValue;
-
-    public void OnAfterDeserialize()
-    {
-		runtimeValue = value;
+    public void SetValue(IntegerVariable v){
+        value = v.value;
     }
 
-    public void OnBeforeSerialize() { }
+    public void IncreaseBy(float f){
+        value += f;
+    }
 }

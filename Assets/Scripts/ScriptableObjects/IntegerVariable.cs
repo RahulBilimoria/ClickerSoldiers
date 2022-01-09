@@ -5,13 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/CreateInteger")]
 public class IntegerVariable : ScriptableObject
 {
-    public int Value;
+    public int value;
 
     public void SetValue(IntegerVariable v){
-        Value = v.Value;
+        value = v.value;
     }
 
     public void IncreaseBy(int x){
-        Value += x;
+        value += x;
     }
 }

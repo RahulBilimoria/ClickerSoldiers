@@ -6,6 +6,6 @@ using UnityEngine.UI;
 public class HealthBarText : Text
 {
     public void UpdateText(IntegerVariable health){
-        text = health.Value + " HP";
+        text = health.value + " HP";
     }
 }

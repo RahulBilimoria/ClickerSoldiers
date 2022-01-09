@@ -12,22 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f939ebcbbca5045479d9e3485fad3a7e, type: 3}
   m_Name: Enemy Rarity Chance
   m_EditorClassIdentifier: 
-  normal:
-    useConstant: 0
-    constantValue: 0
-    variable: {fileID: 11400000, guid: 2e9729108e911b944ab0dc0c7380896e, type: 2}
-  magic:
-    useConstant: 0
-    constantValue: 0
-    variable: {fileID: 11400000, guid: 358eb371f18be074d98addf1a061edd0, type: 2}
-  rare:
-    useConstant: 0
-    constantValue: 0
-    variable: {fileID: 11400000, guid: d4ebcabafc5c9c84fb2abcb8ca8cb85a, type: 2}
-  unique:
-    useConstant: 0
-    constantValue: 0
-    variable: {fileID: 11400000, guid: e7761005b4aecc24cb1d7a13361feabd, type: 2}
+  normal: {fileID: 11400000, guid: 2e9729108e911b944ab0dc0c7380896e, type: 2}
+  magic: {fileID: 11400000, guid: 358eb371f18be074d98addf1a061edd0, type: 2}
+  rare: {fileID: 11400000, guid: d4ebcabafc5c9c84fb2abcb8ca8cb85a, type: 2}
+  unique: {fileID: 11400000, guid: e7761005b4aecc24cb1d7a13361feabd, type: 2}
   currentRarity: {fileID: 11400000, guid: 0c75f20218aa2ad47b6ba4ff262e920c, type: 2}
   rarityColor:
   - {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 0}

@@ -8,11 +8,11 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
 
     public void SetHealth(IntegerVariable health){
-        slider.value = health.Value;
+        slider.value = health.value;
     }
 
     public void SetMaxHealth(IntegerVariable maxHealth){
-        slider.maxValue = maxHealth.Value;
-        slider.value = maxHealth.Value;
+        slider.maxValue = maxHealth.value;
+        slider.value = maxHealth.value;
     }
 }

@@ -18,4 +18,8 @@ public class Enemy : Entity
         sr.material.color = enemyRarityType.GetColor(rarity);
         //maxHealth.Value = 
     }
+
+    public void SetMonsterMaxHP(){
+        
+    }
 }

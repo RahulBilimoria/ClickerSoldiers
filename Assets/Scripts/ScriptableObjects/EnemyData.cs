@@ -7,5 +7,4 @@ public class EnemyData : ScriptableObject
 {
     public IntegerVariable maxHealth;
     public IntegerVariable health;
-    public IntegerVariable damage;
 }
