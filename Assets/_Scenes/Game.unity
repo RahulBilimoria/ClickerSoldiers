@@ -668,9 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eeed9eb0e28ad74095daee657e4ac32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onGoldChange: {fileID: 11400000, guid: dd2854c508da4dc4c861ee4e025d3ee7, type: 2}
   upgradeData: {fileID: 11400000, guid: 4fc8f27dddf3ed74594a8fc2aa402616, type: 2}
-  playerGold: {fileID: 11400000, guid: 1437b903e6b340e4e9e578f5c7e5be95, type: 2}
   statText:
   - {fileID: 1274921685}
   - {fileID: 1557951995}
@@ -1375,6 +1373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 321277815}
+  - component: {fileID: 321277816}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1397,6 +1396,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &321277816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321277814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02bb827eef7e4f4499660708211b5acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isUnlocked: {fileID: 11400000, guid: f942f2eb5ef922a4f8098992f2442083, type: 2}
+  attacksPerSecond: {fileID: 11400000, guid: 35d0b3e99407427438046672921a1109, type: 2}
+  damage: {fileID: 11400000, guid: 13bd5711bffeedb4a837ad759177c6be, type: 2}
+  unlock: {fileID: 598920450}
+  enemy: {fileID: 2025705197}
 --- !u!1 &334948415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,6 +2306,17 @@ RectTransform:
   m_AnchoredPosition: {x: -10, y: 0}
   m_SizeDelta: {x: 780, y: 468.56}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &598920450 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2116996801625273201, guid: 8a679f0f0260adf46bd58fcccf9b1dfb, type: 3}
+  m_PrefabInstance: {fileID: 1557951992}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &625863131
 GameObject:
   m_ObjectHideFlags: 0
@@ -4711,12 +4738,28 @@ PrefabInstance:
       value: Attacks / Second
       objectReference: {fileID: 0}
     - target: {fileID: 2116996801625273201, guid: 8a679f0f0260adf46bd58fcccf9b1dfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116996801625273201, guid: 8a679f0f0260adf46bd58fcccf9b1dfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116996801625273201, guid: 8a679f0f0260adf46bd58fcccf9b1dfb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 145590283}
     - target: {fileID: 2116996801625273201, guid: 8a679f0f0260adf46bd58fcccf9b1dfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116996801625273201, guid: 8a679f0f0260adf46bd58fcccf9b1dfb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BuyUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116996801625273201, guid: 8a679f0f0260adf46bd58fcccf9b1dfb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UpgradeLabels, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2116996801625273201, guid: 8a679f0f0260adf46bd58fcccf9b1dfb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -5564,18 +5607,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 942829907}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: SetHealth
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 18751b83681244c468c1e13d1d396e91, type: 2}
-          m_ObjectArgumentAssemblyTypeName: IntegerVariable, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1822711087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5592,6 +5623,18 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 11400000, guid: fce952f924090cc48be56afa5a26c032, type: 2}
+        m_TargetAssemblyTypeName: GenerateDrops, Assembly-CSharp
+        m_MethodName: GenerateGold
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 9551fe82cb19464489abcb7116cfc779, type: 2}
         m_TargetAssemblyTypeName: IntegerVariable, Assembly-CSharp
         m_MethodName: IncreaseBy
@@ -5611,6 +5654,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2025705197}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: SetMonsterHP
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: bcfd63a60f48de744b1274d2f4bf0934, type: 2}
+          m_ObjectArgumentAssemblyTypeName: FloatVariable, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5721,6 +5776,7 @@ GameObject:
   - component: {fileID: 1950028922}
   - component: {fileID: 1950028921}
   - component: {fileID: 1950028924}
+  - component: {fileID: 1950028925}
   m_Layer: 0
   m_Name: OnGameStart
   m_TagString: Untagged
@@ -5759,9 +5815,21 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 942829907}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: SetMaxHealth
+      - m_Target: {fileID: 2025705197}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: SetMonsterHP
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: bcfd63a60f48de744b1274d2f4bf0934, type: 2}
+          m_ObjectArgumentAssemblyTypeName: FloatVariable, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 18751b83681244c468c1e13d1d396e91, type: 2}
+        m_TargetAssemblyTypeName: IntegerVariable, Assembly-CSharp
+        m_MethodName: SetValue
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: bce880e7eaa446345a98425f61b8cc9f, type: 2}
@@ -5771,9 +5839,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 18751b83681244c468c1e13d1d396e91, type: 2}
-        m_TargetAssemblyTypeName: IntegerVariable, Assembly-CSharp
-        m_MethodName: SetValue
+      - m_Target: {fileID: 942829907}
+        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_MethodName: SetMaxHealth
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: bce880e7eaa446345a98425f61b8cc9f, type: 2}
@@ -5891,6 +5959,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1950028925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950028919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462aea04572369f46b1dbadf8c9e00e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 89c5304c50b8d0f43889fb6cfbb44b97, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 321277816}
+        m_TargetAssemblyTypeName: AutoAttack, Assembly-CSharp
+        m_MethodName: AssignButtonHandler
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1982118200
 GameObject:
   m_ObjectHideFlags: 0
@@ -5902,6 +5998,7 @@ GameObject:
   - component: {fileID: 1982118201}
   - component: {fileID: 1982118202}
   - component: {fileID: 1982118203}
+  - component: {fileID: 1982118204}
   m_Layer: 0
   m_Name: OnEnemyHealthChange
   m_TagString: Untagged
@@ -5975,6 +6072,34 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 18751b83681244c468c1e13d1d396e91, type: 2}
           m_ObjectArgumentAssemblyTypeName: IntegerVariable, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1982118204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982118200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462aea04572369f46b1dbadf8c9e00e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 05e03e73740a17b43806db4db80c7321, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2025705197}
+        m_TargetAssemblyTypeName: Entity, Assembly-CSharp
+        m_MethodName: isDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6319,6 +6444,7 @@ MonoBehaviour:
   - {fileID: 1307813494651596780, guid: ae6d81012482f8e42b176bc3b0c7c8ad, type: 3}
   sr: {fileID: 2025705199}
   enemyRarityType: {fileID: 11400000, guid: 8b7ba9069d2089f4cbfc59323bda3cc9, type: 2}
+  attacksPerSecond: {fileID: 0}
 --- !u!95 &2025705198
 Animator:
   serializedVersion: 4
@@ -6647,6 +6773,7 @@ MonoBehaviour:
   enemySpriteList: []
   sr: {fileID: 0}
   enemyRarityType: {fileID: 11400000, guid: 8b7ba9069d2089f4cbfc59323bda3cc9, type: 2}
+  attacksPerSecond: {fileID: 0}
 --- !u!1 &2083352766
 GameObject:
   m_ObjectHideFlags: 0

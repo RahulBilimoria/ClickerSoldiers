@@ -21,6 +21,7 @@ public class Upgrades : ScriptableObject
     [SerializeField] FloatVariable goldMultiplier;
     [SerializeField] FloatVariable monsterHPMultiplier;
     [SerializeField] IntegerVariable playerGold;
+    [SerializeField] BooleanVariable autoAttack;
     [SerializeField] GameEvent onGoldChange;
     private int[] upgradeIndex;
     public bool BuyUpgrade(int index){
@@ -75,13 +76,15 @@ public class Upgrades : ScriptableObject
         return value;
     }
 
-    public void LoadValues(int[] ui){
+    public void LoadValues(int[] ui, bool aa){
         upgradeIndex = ui;
+        autoAttack.value = aa;
         LoadValuesIntoVariables();
     }
 
     public void LoadDefaultValues(){
         upgradeIndex = new int[6];
+        autoAttack.value = false;
         for (int x = 0; x < upgradeIndex.Length; x++){
             upgradeIndex[x] = 0;
         }
@@ -95,5 +98,9 @@ public class Upgrades : ScriptableObject
         baseGold.value = (int)baseGoldCurve.Evaluate(upgradeIndex[3]);
         goldMultiplier.value = goldMultiplierCurve.Evaluate(upgradeIndex[4]);
         monsterHPMultiplier.value = monsterHPMultiplierCurve.Evaluate(upgradeIndex[5]);
+    }
+
+    public bool IsAutoAttackUnlocked(){
+        return autoAttack;
     }
 }

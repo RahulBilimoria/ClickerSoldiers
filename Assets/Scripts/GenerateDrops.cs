@@ -12,7 +12,7 @@ public class GenerateDrops : ScriptableObject
     public IntegerVariable monsterCount;
     public IntegerVariable rarity;
     public void GenerateGold(){
-        gold.value += (int)(((baseGoldDropped.value * rarity.value) * (monsterCount.value!=10?1:5)) * goldMulti.value);
+        gold.value += (int)(((baseGoldDropped.value * (1+rarity.value)) * (monsterCount.value!=10?1:5)) * (1+goldMulti.value/100));
         onGoldChange.Raise();
     }
 }

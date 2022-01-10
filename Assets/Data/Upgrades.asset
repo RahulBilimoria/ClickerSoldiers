@@ -94,22 +94,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: -0.114356995
       value: 0
-      inSlope: 1.0575169
-      outSlope: 1.0575169
+      inSlope: 0.22568707
+      outSlope: 0.22568707
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.078902304
+      outWeight: 0.09680262
     - serializedVersion: 3
       time: 25
-      value: 100
-      inSlope: 13.136491
-      outSlope: 13.136491
+      value: 10
+      inSlope: 0.24901073
+      outSlope: 0.24901073
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.085368045
+      inWeight: 0.098303385
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -144,12 +144,48 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0.585927
-      outSlope: 0.585927
+      inSlope: 1.1106383
+      outSlope: 1.1106383
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.057678614
+      outWeight: 0.7091541
+    - serializedVersion: 3
+      time: 1
+      value: 2
+      inSlope: 1.0797595
+      outSlope: 1.0797595
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.6127404
+    - serializedVersion: 3
+      time: 2
+      value: 3
+      inSlope: 1.0470122
+      outSlope: 1.0470122
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.575773
+    - serializedVersion: 3
+      time: 3
+      value: 4
+      inSlope: 1.0574328
+      outSlope: 1.0574328
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.7052579
+    - serializedVersion: 3
+      time: 4
+      value: 5
+      inSlope: 2.4581811
+      outSlope: 2.4581811
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.005475203
     - serializedVersion: 3
       time: 100
       value: 1000
@@ -339,3 +375,6 @@ MonoBehaviour:
   baseGold: {fileID: 11400000, guid: c7b59b89858df184c872cac7b036a1dd, type: 2}
   goldMultiplier: {fileID: 11400000, guid: e5f21ce46f079c749aa426187fa1db09, type: 2}
   monsterHPMultiplier: {fileID: 11400000, guid: bcfd63a60f48de744b1274d2f4bf0934, type: 2}
+  playerGold: {fileID: 11400000, guid: 1437b903e6b340e4e9e578f5c7e5be95, type: 2}
+  autoAttack: {fileID: 11400000, guid: f942f2eb5ef922a4f8098992f2442083, type: 2}
+  onGoldChange: {fileID: 11400000, guid: dd2854c508da4dc4c861ee4e025d3ee7, type: 2}

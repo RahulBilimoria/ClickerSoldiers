@@ -7,6 +7,7 @@ public class Enemy : Entity
     public Sprite[] enemySpriteList;
     public SpriteRenderer sr;
     public RarityChance enemyRarityType;
+    public FloatVariable attacksPerSecond;
     private float attackSpeed;
     private float size;
     private int rarity;
@@ -19,7 +20,7 @@ public class Enemy : Entity
         //maxHealth.Value = 
     }
 
-    public void SetMonsterMaxHP(){
-        
+    public void SetMonsterHP(FloatVariable HPMulti){
+        maxHealth.value = (int)(baseMaxHealth.value - (baseMaxHealth.value * (HPMulti.value/100)));
     }
 }

@@ -14,10 +14,10 @@ public class Entity : MonoBehaviour
     public void TakeDamage(IntegerVariable damageTaken){
         health.value -= (int)(damageTaken.value * (1 + (weaponDamMulti.value/100)));
         onHealthChange.Raise();
+    }
 
-        if (health.value <= 0){
-            onDeath.Raise();
-            dropGenerator.GenerateGold();
-        }
+    public void isDead(){
+        if (health.value > 0) return;
+        onDeath.Raise();
     }
 }
